@@ -2,257 +2,154 @@
 
 <html lang="hi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>1st OPEN State Assam - Dibrugarh | Free Fire MAX LAN Tournament</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Fire Tournament 2025</title>
   <style>
-    :root{--yellow:#FFD400;--black:#0b0b0b;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg, #fff 0%, #fff); color:var(--black)}
-    header{background:var(--black); color:var(--yellow); padding:18px 16px; display:flex; align-items:center; justify-content:space-between}
-    .brand{display:flex; gap:12px; align-items:center}
-    .logo{width:56px; height:56px; border-radius:8px; background:var(--yellow); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--black)}
-    h1{font-size:18px; margin:0}
-    p.lead{margin:4px 0 0; color:var(--yellow); opacity:0.95; font-size:13px}main{padding:16px; max-width:980px; margin:18px auto}
-.card{background:#fff; border-radius:12px; box-shadow:0 6px 18px rgba(11,11,11,0.06); padding:16px; margin-bottom:14px}
-
-.grid{display:grid; grid-template-columns:1fr 320px; gap:14px}
-@media (max-width:880px){.grid{grid-template-columns:1fr}}
-
-.event-meta{display:flex; gap:10px; flex-wrap:wrap}
-.meta-item{background:#111; color:var(--yellow); padding:8px 10px; border-radius:8px; font-weight:600}
-
-.roadmap .step{display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px dashed #eee}
-.step:last-child{border-bottom:none}
-.step .badge{width:44px; height:44px; border-radius:8px; background:var(--yellow); color:var(--black); display:flex; align-items:center; justify-content:center; font-weight:700}
-
-.bracket{display:flex; gap:10px; flex-wrap:wrap}
-.bracket .round{flex:1; min-width:140px}
-.round h4{margin:6px 0}
-.match{background:#fafafa; border-radius:8px; padding:8px; margin-bottom:8px; font-size:14px}
-
-.register-btn{background:var(--yellow); color:var(--black); border:none; padding:12px 18px; border-radius:10px; font-weight:700; cursor:pointer}
-.register-btn:active{transform:translateY(1px)}
-
-form .row{display:flex; gap:10px}
-form label{font-size:13px; color:var(--muted)}
-input, select, textarea{width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid #ddd}
-
-footer{padding:14px; text-align:center; color:#666; font-size:13px}
-
-/* modal */
-.modal-backdrop{position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:50}
-.modal{background:#fff; border-radius:12px; width:96%; max-width:720px; padding:18px}
-.close{background:#eee; border-radius:8px; padding:6px 10px; cur nisor:pointer}
-
-.success{background:linear-gradient(90deg,#e6ffda,#fff); padding:12px; border-radius:10px; color:#1a6b00; margin-top:12px}
+    :root{
+      --accent: #3aa0e6;
+      --muted: #6b7280;
+      --bg: #f7fbfd;
+      --card-bg: rgba(255,255,255,0.85);
+      --radius: 10px;
+      font-family: Inter, system-ui, Arial, sans-serif;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f3f7fb 0%, #ffffff 60%);}
+    .container{
+      max-width:960px;margin:32px auto;padding:28px;background:var(--card-bg);border-radius:16px;box-shadow:0 8px 30px rgba(8,30,50,0.06);backdrop-filter: blur(6px);
+    }
+    h1{margin:0 0 6px 0;font-size:32px;color:#0f172a;text-align:center}
+    p.lead{margin:0 0 20px 0;color:var(--muted);text-align:center}form{display:block}
+.field{margin:18px 0}
+label{display:block;margin-bottom:8px;color:#0f172a;font-weight:600}
+input[type="text"],select,input[type="file"],.drag-area{
+  width:100%;padding:14px 16px;border:2px solid var(--accent);border-radius:8px;outline:none;font-size:15px;background:transparent;box-sizing:border-box;
+}
+.two-col{display:flex;gap:14px}
+.two-col .col{flex:1}
+.players{margin-top:8px}
+.subtle{color:var(--muted);font-weight:500}
+.drag-area{min-height:78px;display:flex;align-items:center;justify-content:center;color:var(--muted);border-style:dashed}
+.note{font-size:13px;color:var(--muted);margin-top:6px}
+.submit-row{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
+.btn{background:var(--accent);color:white;padding:12px 18px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+.btn:active{transform:translateY(1px)}
+.verification{display:flex;align-items:center;gap:10px}
+.small{font-size:14px}
+@media (max-width:700px){.two-col{flex-direction:column}}
 
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">FF</div>
-      <div>
-        <h1>1ST OPEN State Assam — Dibrugarh</h1>
-        <p class="lead">FREE FIRE MAX / Free Fire — ESPORTS LAN TOURNAMENT</p>
+  <div class="container">
+    <h1>Free Fire Tournament 2025</h1>
+    <p class="lead">Register your team players and the titles your team will participate in.</p><form id="tournamentForm" novalidate>
+
+  <div class="field">
+    <label for="teamName">Team name</label>
+    <input id="teamName" name="teamName" type="text" placeholder="Team name" required />
+  </div>
+
+  <div class="field">
+    <label>Team coach</label>
+    <div class="two-col">
+      <div class="col">
+        <input id="coachFirst" name="coachFirst" type="text" placeholder="First" required />
+      </div>
+      <div class="col">
+        <input id="coachLast" name="coachLast" type="text" placeholder="Last" required />
+      </div>
+      <div class="col">
+        <input number="p1last" type="number" placeholder="id" required />
       </div>
     </div>
-    <div>
-      <button class="register-btn" id="openReg">Register</button>
-    </div>
-  </header>  <main>
-    <div class="grid">
-      <section>
-        <div class="card">
-          <h2>इवेंट विवरण</h2>
-          <div class="event-meta" style="margin-top:10px">
-            <div class="meta-item">स्थान: Dibrugarh, Assam</div>
-            <div class="meta-item">गेम: Free Fire MAX / Free Fire</div>
-            <div class="meta-item">LAN / Esports</div>
-          </div><p style="margin-top:12px; color:var(--muted)">यह 1st OPEN State Assam टूर्नामेंट है। सभी टीमों के लिए खुला रजिस्ट्रेशन। नीचे रोडमैप और ब्रैकेट देखें — क्वालिफायर से ग्रैंड फाइनल तक का पूरा प्रवाह दिया गया है।</p>
-    </div>
+  </div>
 
-    <div class="card roadmap">
-      <h3>ROADMAP BR</h3>
+  <div class="field">
+    <label for="country">Country of origin</label>
+    <select id="country" name="country">
+      <option>Romania</option>
+      <option>India</option>
+      <option>United States</option>
+      <option>Brazil</option>
+      <option>Indonesia</option>
+      <option>Other</option>
+    </select>
+  </div>
 
-      <div class="step">
-        <div class="badge">Q</div>
-        <div>
-          <strong>QUALIFIERS</strong>
-          <div style="color:var(--muted); font-size:13px">12 teams in 16 matches — कुल 16 मैच, पॉइंट सीरीज के आधार पर चयन</div>
-        </div>
-      </div>
+  <div class="field">
+    <label>Team logo</label>
+    <div id="dragArea" class="drag-area" tabindex="0">Choose files or drag here</div>
+    <input id="logoInput" name="logo" type="file" accept="image/*" style="display:none" />
+    <div id="logoName" class="note"></div>
+  </div>
 
-      <div class="step">
-        <div class="badge">16</div>
-        <div>
-          <strong>QUALIFIERS — Team 16</strong>
-          <div style="color:var(--muted); font-size:13px">क्वालिफायर से 16 टीमें आगे जाएँगी (पॉइंट सीरीज़ पर आधारित)</div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="badge">8</div>
-        <div>
-          <strong>QUARTER FINAL — Team 8</strong>
-          <div style="color:var(--muted); font-size:13px">क्वार्टर फ़ाइनल में 8 टीमें</div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="badge">4</div>
-        <div>
-          <strong>SEMI FINAL — 4 Matches</strong>
-          <div style="color:var(--muted); font-size:13px">सेमी फ़ाइनल: 4 मैच</div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="badge">2</div>
-        <div>
-          <strong>GRAND FINALS — 2</strong>
-          <div style="color:var(--muted); font-size:13px">ग्रैंड फाइनल में 2 टीमें और 2 मैप/मैच</div>
-        </div>
-      </div>
+  <div class="players">
+    <label class="subtle">Player #1</label>
+    <div class="two-col field">
+      <div class="col"><input name="p1first" type="text" placeholder="First" required /></div>
+      <div class="col"><input name="p1last" type="text" placeholder="Last" required /></div>
+      <div class="col"><input number="p1last" type="number" placeholder="id" required /></div>
     </div>
 
-    <div class="card">
-      <h3>टूर्नामेंट ब्रैकेट (सारांश)</h3>
-      <div class="bracket">
-        <div class="round">
-          <h4>QUALIFIERS</h4>
-          <div class="match">12 teams — 16 matches — पॉइंट सीरीज़ द्वारा चयन</div>
-        </div>
-        <div class="round">
-          <h4>QUARTER FINALS</h4>
-          <div class="match">Top 8 teams — BO3/BO2 (आप चुनें)</div>
-        </div>
-        <div class="round">
-          <h4>SEMI FINALS</h4>
-          <div class="match">Top 4 teams — 4 matches (लाइव LAN)</div>
-        </div>
-        <div class="round">
-          <h4>GRAND FINALS</h4>
-          <div class="match">Top 2 teams — 2 maps — Champion announced</div>
-        </div>
-      </div>
+    <label class="subtle">Player #2</label>
+    <div class="two-col field">
+      <div class="col"><input name="p2first" type="text" placeholder="First" required /></div>
+      <div class="col"><input name="p2last" type="text" placeholder="Last" required /></div>
+      <div class="col"><input number="p1last" type="number" placeholder="id" required /></div>
     </div>
 
-  </section>
-
-  <aside>
-    <div class="card">
-      <h3>दिशा-निर्देश</h3>
-      <ol style="padding-left:18px;color:var(--muted)">
-        <li>रजिस्ट्रेशन के बाद टीम वेरिफिकेशन अनिवार्य है।</li>
-        <li>हर टीम में अधिकतम 4 खिलाड़ी + 1 सब्स्टीट्यूट।</li>
-        <li>LAN इन्फ्रास्ट्रक्चर पर खुद की डिवाइस लानी होगी।</li>
-        <li>क्वालिफायर्स पॉइंट सीरीज़ के अनुसार होंगे।</li>
-      </ol>
-      <div style="margin-top:12px; text-align:center">
-        <button class="register-btn" id="openReg2">REGISTER NOW</button>
-      </div>
+    <label class="subtle">Player #3</label>
+    <div class="two-col field">
+      <div class="col"><input name="p3first" type="text" placeholder="First" required /></div>
+      <div class="col"><input name="p3last" type="text" placeholder="Last" required /></div>
+      <div class="col"><input number="p1last" type="number" placeholder="id" required /></div>
     </div>
+  </div>
 
-    <div class="card">
-      <h3>कॉम्पटीशन शेड्यूल (रॉफ्ट)</h3>
-      <p style="color:var(--muted); font-size:14px">क्वालिफायर्स — (दिन/समय TBD)<br>LAN इवेंट — (दिन/समय TBD)</p>
-    </div>
+  <div class="field verification">
+    <input id="verify" name="verify" type="checkbox" />
+    <label for="verify" class="small">I confirm that all information is correct (Verification)</label>
+  </div>
 
-    <div class="card">
-      <h3>Contact</h3>
-      <p style="color:var(--muted)">Tournament Organizer: <strong>Krazysquad</strong><br>WhatsApp / Call: <em>+91-XXXXXXXXXX</em></p>
-    </div>
-  </aside>
-</div>
+  <div class="submit-row">
+    <div class="note">* Fields marked required must be filled.</div>
+    <button class="btn" type="submit">Register Team</button>
+  </div>
 
-<div class="card">
-  <h3>नियम</h3>
-  <ul style="color:var(--muted)">
-    <li>कोई भी खिलाड़ी कई टीमों में भाग नहीं ले सकता।</li>
-    <li>किसी भी डिसक्वालिफिकेशन के मामले में आयोजक का निर्णय अंतिम होगा।</li>
-    <li>अनुचित व्यवहार पर तुरन्त बैन/डिसक्वालिफाई किया जा सकता है।</li>
-  </ul>
-</div>
-
-  </main>  <footer>
-    © 2025 Krazysquad — 1st OPEN State Assam, Dibrugarh
-  </footer>  <!-- Modal (Registration form) -->  <div class="modal-backdrop" id="modal">
-    <div class="modal" role="dialog" aria-modal="true">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
-        <strong>Team Registration</strong>
-        <button class="close" id="closeModal">Close</button>
-      </div><form id="regForm">
-    <div class="row">
-      <div style="flex:1">
-        <label>Team Name</label>
-        <input type="text" name="team" required placeholder="अपनी टीम का नाम">
-      </div>
-      <div style="width:120px">
-        <label>Players</label>
-        <input type="number" name="players" min="1" max="6" value="4" required>
-      </div>
-    </div>
-
-    <div style="margin-top:10px">
-      <label>Team Captain Name</label>
-      <input type="text" name="captain" required placeholder="कैप्टन का नाम">
-    </div>
-
-    <div style="margin-top:10px">
-      <label>Contact Number (WhatsApp)</label>
-      <input type="tel" name="phone" required placeholder="+91xxxxxxxxxx">
-    </div>
-
-    <div style="margin-top:10px">
-      <label>Game Type</label>
-      <select name="game">
-        <option>Free Fire MAX</option>
-        <option>Free Fire</option>
-      </select>
-    </div>
-
-    <div style="margin-top:10px">
-      <label>Additional Notes</label>
-      <textarea name="notes" rows="3" placeholder="कोई ख़ास सूचना"></textarea>
-    </div>
-
-    <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
-      <button type="submit" class="register-btn">Submit Registration</button>
-      <button type="button" class="close" id="cancel">Cancel</button>
-    </div>
-
-    <div id="formResult" style="display:none" class="success">Registration submitted! हम आपसे संपर्क करेंगे।</div>
-  </form>
-</div>
+</form>
 
   </div>  <script>
-    const modal = document.getElementById('modal');
-    const open = document.getElementById('openReg');
-    const open2 = document.getElementById('openReg2');
-    const close = document.getElementById('closeModal');
-    const cancel = document.getElementById('cancel');
-    const form = document.getElementById('regForm');
-    const result = document.getElementById('formResult');
+  // Drag & drop + file chooser (yahan kuch change nahi karna)
 
-    function showModal(){ modal.style.display='flex'; result.style.display='none'; form.style.display='block'; }
-    function hideModal(){ modal.style.display='none'; }
+  // Simple form validation + demo submit
+  const form = document.getElementById('tournamentForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
 
-    open.addEventListener('click', showModal);
-    open2.addEventListener('click', showModal);
-    close.addEventListener('click', hideModal);
-    cancel.addEventListener('click', hideModal);
-    modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
-
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      // Basic front-end validation done by required attributes. Here we just show success message.
-      form.style.display='none';
-      result.style.display='block';
-      // In real deployment: send data to server via fetch/AJAX
-      console.log('Registration data:', Object.fromEntries(new FormData(form)));
-      window.location.href = 'ffhtml.html';
+    const required = form.querySelectorAll('[required]');
+    let ok = true;
+    required.forEach(inp=>{
+      if(!inp.value.trim()){
+        inp.style.borderColor='crimson'; 
+        ok=false;
+      } else {
+        inp.style.borderColor='var(--accent)';
+      }
     });
-  </script></body>
+
+    if(!form.verify.checked){
+      alert('Please confirm verification.');
+      return;
+    }
+    if(!ok){
+      alert('Please fill all required fields.');
+      return;
+    }
+
+    // 👉 Yahin par redirect hoga
+    window.location.href = "paymant .html";
+  });
+</script>
+</body>
 </html>
